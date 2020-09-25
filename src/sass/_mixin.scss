@@ -1,0 +1,37 @@
+$bai:#ffffff; //白色
+$hui:#333333;
+$hui2:#999;
+// $ln:list-style;
+///////万能清楚/////////////
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin auto () {
+    margin: 0 auto;
+}
+
+////////////宽高///////////////
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+/////////////a标签////////////
+@mixin a() {
+    display: block;
+    text-decoration: none;
+}
+
+//////////颜色，字体大小/////////
+@mixin fonts($s, $c) {
+    font-size: $s;
+    color: $c;
+}

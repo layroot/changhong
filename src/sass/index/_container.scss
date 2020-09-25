@@ -1,0 +1,6 @@
+.container {
+    @include wh(1226px, 685px);
+    @include auto;
+    background-color: indigo;
+    padding-top: 30px;
+}

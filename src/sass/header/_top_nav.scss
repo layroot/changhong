@@ -1,0 +1,82 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Arial", sans-serif !important;
+    list-style: none;
+    @include a;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.top_nav {
+    .iconfont {
+        padding-left: 35px;
+        display: block;
+        float: left;
+        color: #fff;
+        vertical-align: middle;
+    }
+    @include wh(100%, 35px);
+    // width: 100%;
+    // height: 35px;
+    background-color: #333333;
+    .navcon {
+        display: flex;
+        flex-direction: rowa;
+        width: 1226px;
+        height: 100%;
+        justify-content: space-between;
+        @include auto;
+        .navleft {
+            // background-color: chocolate;
+            width: 630px;
+            color: $bai;
+            li {
+                float: left;
+                list-style: none;
+                @include wh(145px, 100%);
+                a {
+                    @include a;
+                    @include wh(100%, 35px);
+                    @include fonts(13px, #fff);
+                    text-align: center;
+                    line-height: 35px
+                }
+            }
+        }
+        .navright {
+            // background-color: chocolate;
+            width: 630px;
+            color: $bai;
+            li {
+                text-align: center;
+                float: left;
+                list-style: none;
+                @include wh(145px, 100%);
+                a {
+                    display: block;
+                    vertical-align: middle;
+                    @include a;
+                    @include wh(100%, 35px);
+                    text-align: center;
+                    line-height: 35px;
+                    @include fonts(13px, #fff)
+                }
+                &:nth-child(1) {
+                    line-height: 35px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .login,
+                .registry {
+                    margin: 0;
+                    display: inline;
+                }
+            }
+        }
+    }
+}
