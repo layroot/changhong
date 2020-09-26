@@ -4,4 +4,36 @@
     height: 160px;
     background-color: crimson;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    .homeleft {
+        display: flex;
+        background-color: #585858;
+        width: 228px;
+        flex-wrap: wrap;
+        li {
+            border-right: 1px solid #717171;
+            border-bottom: 1px solid #717171;
+            width: 112px;
+            height: 78px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .iconfont {
+                color: #9c9c9c;
+                font-size: 35px;
+            }
+            .text {
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+    }
+    .homeitem {
+        background-color: #717171;
+        width: 320px;
+        height: 160px;
+    }
 }

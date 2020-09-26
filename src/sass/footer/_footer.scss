@@ -1,6 +1,212 @@
 .footer {
     width: 100%;
-    height: 564px;
-    background-color: darksalmon;
     @include auto;
+    .foottop {
+        width: 100%;
+        background-color: #efefef;
+    }
+    .footbot {
+        width: 100%;
+        background-color: #333;
+        height: 220px;
+    }
+}
+
+.topbox {
+    width: 1226px;
+    height: 340px;
+    background-color: #efefef;
+    @include auto;
+    .help {
+        @include wh(1176px, 76px);
+        padding: 37px 25px 0px 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #dddddd;
+        div {
+            .iconfont {
+                font-size: 50px;
+                float: left;
+            }
+            p {
+                display: block;
+                margin-left: 15px;
+                float: left;
+                .s1 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-top: 7px;
+                }
+                .s2 {
+                    font-size: 14px;
+                    color: #999;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .server {
+        margin-top: 20px;
+        .sbox1 {
+            float: left;
+            width: 385px;
+            height: 154px;
+            ul {
+                margin-left: 40px;
+                list-style: none;
+                width: 70px;
+                float: left;
+                &:last-child {
+                    margin-left: 80px;
+                    ;
+                }
+                li {
+                    width: 100%;
+                    font-size: 11px;
+                    color: #999;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                .lititle {
+                    font-size: 16px;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .sbox2 {
+            float: left;
+            width: 186px;
+            height: 183px;
+            margin-left: 40px;
+            ul {
+                list-style: none;
+                width: 70px;
+                float: left;
+                &:nth-of-type(2) {
+                    margin-left: 40px;
+                }
+                li {
+                    width: 100%;
+                    font-size: 11px;
+                    color: #999;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                .lititle {
+                    font-size: 16px;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
+            }
+            .line {
+                padding-top: 20px;
+                text-align: right;
+                width: 186px;
+                border-top: 1px solid #dddddd;
+                float: left;
+                a {
+                    color: #333;
+                }
+            }
+        }
+        .sbox3 {
+            float: left;
+            @include wh(207px, 146px);
+            padding-right: 20px;
+            margin-left: 50px;
+            border-left: 1px solid #dddddd;
+            border-right: 1px solid #dddddd;
+            .iconfont {
+                font-size: 20px;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+            .p1 {
+                margin-top: 20px;
+                width: 100%;
+                line-height: 14px;
+                font-size: 14px;
+                display: flex;
+                justify-content: start;
+                vertical-align: middle;
+                color: #f12020;
+                margin-left: 20px;
+            }
+            .p2 {
+                margin-top: 20px;
+                width: 100%;
+                line-height: 14px;
+                font-size: 14px;
+                display: flex;
+                justify-content: start;
+                vertical-align: middle;
+                color: #f12020;
+                margin-left: 20px;
+            }
+            .p3 {
+                margin-left: 20px;
+                margin-top: 20px;
+                font-size: 22px;
+                font-weight: 500;
+                color: #333;
+            }
+        }
+        .sbox4 {
+            width: 280px;
+            height: 140px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            div {
+                img {
+                    @include wh(108px, 108px)
+                }
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                width: 140px;
+            }
+        }
+    }
+}
+
+.footbox {
+    @include wh(1226px, 180px);
+    @include auto;
+    overflow: hidden;
+    .logo {
+        text-align: center;
+        img {
+            @include auto;
+            margin-top: 15px;
+        }
+    }
+    .text {
+        margin-top: 20px;
+        color: #999999;
+        text-align: center;
+        p {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+    }
+    .note {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            margin-right: 10px;
+        }
+        p {
+            font-size: 12px;
+            display: flex;
+            color: #999999;
+        }
+    }
 }
