@@ -1,15 +1,18 @@
 .banner {
-    width: 1920px;
+    width: 100%;
     height: 500px;
     background-color: aquamarine;
     position: relative;
     // @include auto;
     .banner_lbt {
         position: absolute;
-        @include wh(100%, 100%);
-        // img {
-        //     @include auto;
-        // }
+        overflow: hidden;
+        @include wh(1920px, 100%);
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            @include auto;
+        }
         background-color: coral;
     }
     .banner_list {
@@ -30,7 +33,7 @@
             padding: 10px 0;
             background: rgba(0, 0, 0, .4);
             position: absolute;
-            @include wh(226px, calc(100%-20px));
+            @include wh(226px, 500px);
             li {
                 a {
                     display: block;
@@ -42,5 +45,19 @@
                 }
             }
         }
+    }
+    .libox {
+        position: relative;
+        padding: 25px, 40px, 0px, 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include wh(400px, 300px);
+        background-color: rgb(80, 255, 133);
+    }
+    li {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        float: left;
     }
 }

@@ -1,6 +1,7 @@
 .header {
     // width: 100%;
     // height: 78px;
+    position: relative;
     @include wh(100%, 78px);
     background-color: $bai;
     .header_contain {
@@ -12,6 +13,67 @@
             @include wh(239px, 100%)
         }
         align-items: center;
+    }
+}
+
+.active {
+    color: #F12020!important;
+}
+
+.bot {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 0px;
+    background-color: #fff;
+    position: relative;
+    .botbox {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        width: 1226px;
+        height: 280px;
+        background-color: #fff;
+        @include auto;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        .p1 {
+            width: 230px;
+            float: left;
+            font-size: 20px;
+            color: #3a3939;
+            line-height: 280px;
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            @include wh(200px, 280px);
+            margin-right: 50px;
+            img {
+                padding-right: 80px;
+                border-right: 1px solid #e3e3e3;
+            }
+            .title {
+                line-height: 50px;
+                height: 50px;
+                width: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .p2 {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                color: #F12020;
+            }
+        }
     }
 }
 
@@ -47,3 +109,14 @@
         margin-left: 10px;
     }
 }
+
+// .menu {
+//     @include wh(720px, 25px);
+//     float: left;
+//     padding-left: 20px;
+//     text-align: left;
+//     margin-top: 30px;
+//     line-height: 24px;
+//     font-size: 24px;
+//     border-left: 1px solid #e3e3e3;
+// }
