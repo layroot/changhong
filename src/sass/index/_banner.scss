@@ -11,10 +11,34 @@
         left: 50%;
         transform: translateX(-50%);
         img {
+            position: absolute;
             @include auto;
+            // display: none;
+            opacity: 0;
         }
-        background-color: coral;
+        background-color: rgb(255, 255, 255);
     }
+    .dian {
+        float: left;
+        position: relative;
+        left: 50%;
+        margin-left: 500px;
+        margin-top: 450px;
+        z-index: 2;
+        li {
+            float: left;
+            @include wh(10px, 10px);
+            background-color: gray;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .dianactive {
+            background-color: #F12020;
+        }
+    }
+    // .dianactive {
+    //     background-color: #F12020;
+    // }
     .banner_list {
         position: absolute;
         @include wh(1226px, 100%);
@@ -33,8 +57,9 @@
             padding: 10px 0;
             background: rgba(0, 0, 0, .4);
             position: absolute;
-            @include wh(226px, 500px);
+            @include wh(226px, 480px);
             li {
+                height: 60px;
                 a {
                     display: block;
                     vertical-align: middle;
@@ -46,18 +71,28 @@
             }
         }
     }
-    .libox {
-        position: relative;
-        padding: 25px, 40px, 0px, 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        @include wh(400px, 300px);
-        background-color: rgb(80, 255, 133);
+    .listactive {
+        background-color: #F12020;
+        color: #ffffff;
     }
-    li {
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        float: left;
+    .leftbox {
+        position: relative;
+        padding-left: 30px;
+        left: 50%;
+        transform: translateX(-90%);
+        top: 0px;
+        @include wh(400px, 480px);
+        display: none;
+        background-color: rgb(255, 255, 255);
+    }
+    .listitem {
+        position: absolute;
+        li {
+            border-bottom: 1px solid #eeeeee;
+            width: 100%;
+            height: 80px;
+            line-height: 50px;
+            float: left;
+        }
     }
 }

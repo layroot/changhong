@@ -17,6 +17,10 @@ body {
     overflow-x: hidden;
 }
 
+.navhover {
+    background-color: #555555;
+}
+
 .top_nav {
     .iconfont {
         padding-left: 35px;
@@ -37,16 +41,21 @@ body {
         justify-content: space-between;
         @include auto;
         .navleft {
+            text-align: center;
             // background-color: chocolate;
             width: 630px;
             color: $bai;
             li {
+                &:hover {
+                    background-color: #555;
+                }
+                cursor: pointer;
                 float: left;
                 list-style: none;
                 @include wh(145px, 100%);
                 a {
                     @include a;
-                    @include wh(100%, 35px);
+                    @include wh(145px, 100%);
                     @include fonts(13px, #fff);
                     text-align: center;
                     line-height: 35px
@@ -58,6 +67,9 @@ body {
             width: 630px;
             color: $bai;
             li {
+                &:hover {
+                    background-color: #555;
+                }
                 text-align: center;
                 float: left;
                 list-style: none;
@@ -72,12 +84,19 @@ body {
                     @include fonts(13px, #fff)
                 }
                 &:nth-child(1) {
+                    &:hover {
+                        background-color: #333;
+                    }
                     line-height: 35px;
                     display: flex;
                     justify-content: space-between;
                 }
                 .login,
                 .registry {
+                    &:hover {
+                        background-color: #333;
+                        color: red;
+                    }
                     margin: 0;
                     display: inline;
                 }

@@ -3,6 +3,7 @@
     @include auto;
     // background-color: indigo;
     padding-top: 30px;
+    background-color: #f9f9f9;
     .contleft {
         @include wh(226px, 685px);
         // background-color: yellow;
@@ -15,12 +16,10 @@
             p {
                 float: left;
                 padding-left: 12px;
-                border-left: 4px solid #ca694e;
                 font-size: 22px;
                 color: #333;
             }
             a {
-                color: #8a4532;
                 font-size: 14px;
                 float: right;
                 line-height: 30px;
@@ -45,6 +44,9 @@
                     margin-left: 33px;
                     a {
                         color: #333;
+                        &:hover {
+                            color: #F12020!important;
+                        }
                     }
                 }
             }

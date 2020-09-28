@@ -26,32 +26,41 @@
     width: 100%;
     height: 0px;
     background-color: #fff;
-    position: relative;
+    // position: relative;
+    overflow: hidden;
     .botbox {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        display: none;
+        // position: absolute;
+        // left: 50%;
+        // transform: translateX(-50%);
+        display: flex;
+        // display: none;
         width: 1226px;
         height: 280px;
         background-color: #fff;
         @include auto;
         text-align: center;
-        display: flex;
         flex-direction: row;
         justify-content: start;
         .p1 {
             width: 230px;
+            height: 100%;
             float: left;
             font-size: 20px;
             color: #3a3939;
             line-height: 280px;
         }
-        li {
+        ul {
+            @include wh(1200px, 280px);
+            @include auto;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: center;
+        }
+        li {
+            float: left;
+            // flex-direction: column;
             // justify-content: center;
-            align-items: center;
+            // align-items: center;
             @include wh(200px, 280px);
             margin-right: 50px;
             img {
@@ -98,6 +107,7 @@
     display: flex;
     @include wh(202px, 40px);
     border: 1px solid #e3e3e3;
+    background-color: #fff;
     align-items: center;
     input {
         outline: none;

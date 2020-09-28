@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+.navhover {
+  background-color: #555555;
+}
+
 .top_nav {
   width: 100%;
   height: 35px;
@@ -47,21 +51,27 @@ body {
 }
 
 .top_nav .navcon .navleft {
+  text-align: center;
   width: 630px;
   color: #ffffff;
 }
 
 .top_nav .navcon .navleft li {
+  cursor: pointer;
   float: left;
   list-style: none;
   width: 145px;
   height: 100%;
 }
 
+.top_nav .navcon .navleft li:hover {
+  background-color: #555;
+}
+
 .top_nav .navcon .navleft li a {
   text-decoration: none;
-  width: 100%;
-  height: 35px;
+  width: 145px;
+  height: 100%;
   font-size: 13px;
   color: #fff;
   text-align: center;
@@ -79,6 +89,10 @@ body {
   list-style: none;
   width: 145px;
   height: 100%;
+}
+
+.top_nav .navcon .navright li:hover {
+  background-color: #555;
 }
 
 .top_nav .navcon .navright li a {
@@ -103,10 +117,20 @@ body {
           justify-content: space-between;
 }
 
+.top_nav .navcon .navright li:nth-child(1):hover {
+  background-color: #333;
+}
+
 .top_nav .navcon .navright li .login,
 .top_nav .navcon .navright li .registry {
   margin: 0;
   display: inline;
+}
+
+.top_nav .navcon .navright li .login:hover,
+.top_nav .navcon .navright li .registry:hover {
+  background-color: #333;
+  color: red;
 }
 
 .header {
@@ -146,24 +170,18 @@ body {
   width: 100%;
   height: 0px;
   background-color: #fff;
-  position: relative;
+  overflow: hidden;
 }
 
 .bot .botbox {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 1226px;
   height: 280px;
   background-color: #fff;
   margin: 0 auto;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -175,23 +193,31 @@ body {
 
 .bot .botbox .p1 {
   width: 230px;
+  height: 100%;
   float: left;
   font-size: 20px;
   color: #3a3939;
   line-height: 280px;
 }
 
-.bot .botbox li {
+.bot .botbox ul {
+  width: 1200px;
+  height: 280px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bot .botbox li {
+  float: left;
   width: 200px;
   height: 280px;
   margin-right: 50px;
@@ -257,6 +283,7 @@ body {
   width: 202px;
   height: 40px;
   border: 1px solid #e3e3e3;
+  background-color: #fff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -289,11 +316,35 @@ body {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  background-color: coral;
+  background-color: white;
 }
 
 .banner .banner_lbt img {
+  position: absolute;
   margin: 0 auto;
+  opacity: 0;
+}
+
+.banner .dian {
+  float: left;
+  position: relative;
+  left: 50%;
+  margin-left: 500px;
+  margin-top: 450px;
+  z-index: 2;
+}
+
+.banner .dian li {
+  float: left;
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.banner .dian .dianactive {
+  background-color: #F12020;
 }
 
 .banner .banner_list {
@@ -321,7 +372,11 @@ body {
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
   width: 226px;
-  height: 500px;
+  height: 480px;
+}
+
+.banner .banner_list ul li {
+  height: 60px;
 }
 
 .banner .banner_list ul li a {
@@ -335,21 +390,33 @@ body {
   color: #fff;
 }
 
-.banner .libox {
-  position: relative;
-  padding: 25px, 40px, 0px, 40px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 400px;
-  height: 300px;
-  background-color: #50ff85;
+.banner .listactive {
+  background-color: #F12020;
+  color: #ffffff;
 }
 
-.banner li {
+.banner .leftbox {
+  position: relative;
+  padding-left: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-90%);
+      -ms-transform: translateX(-90%);
+          transform: translateX(-90%);
+  top: 0px;
+  width: 400px;
+  height: 480px;
+  display: none;
+  background-color: white;
+}
+
+.banner .listitem {
+  position: absolute;
+}
+
+.banner .listitem li {
+  border-bottom: 1px solid #eeeeee;
   width: 100%;
-  height: 50px;
+  height: 80px;
   line-height: 50px;
   float: left;
 }
@@ -378,7 +445,7 @@ body {
   margin: 0 auto;
   width: 1226px;
   height: 160px;
-  background-color: crimson;
+  background-color: #f9f9f9;
   margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -440,6 +507,7 @@ body {
   height: 685px;
   margin: 0 auto;
   padding-top: 30px;
+  background-color: #f9f9f9;
 }
 
 .container .contleft {
@@ -458,13 +526,11 @@ body {
 .container .contleft .top p {
   float: left;
   padding-left: 12px;
-  border-left: 4px solid #ca694e;
   font-size: 22px;
   color: #333;
 }
 
 .container .contleft .top a {
-  color: #8a4532;
   font-size: 14px;
   float: right;
   line-height: 30px;
@@ -498,6 +564,10 @@ body {
 
 .container .contright .top ul li a {
   color: #333;
+}
+
+.container .contright .top ul li a:hover {
+  color: #F12020 !important;
 }
 
 .container .contright .bottom {
@@ -1051,8 +1121,10 @@ body {
   width: 45px;
   height: 250px;
   background-color: #f9f9f9;
+  display: none;
   position: fixed;
   margin-left: 3px;
+  top: 150px;
   z-index: 2;
 }
 
@@ -1069,12 +1141,111 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
+  font-size: 14px;
 }
 
 .leftfixed ul li {
+  cursor: pointer;
   line-height: 40px;
   color: #666;
   size: 14px;
   height: calc(100%/6);
   border-bottom: 1px solid #d6d6d6;
+}
+
+.leftfixed .fixedactive {
+  color: #f9f9f9;
+  background-color: #ee1411;
+}
+
+.rightfixed {
+  position: fixed;
+  top: 200px;
+  right: 0;
+  z-index: 2;
+  width: 40px;
+  height: 122px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rightfixed > li {
+  background-color: #ccc;
+  text-align: center;
+  position: flex;
+  width: 100%;
+  height: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.rightfixed > li:nth-of-type(2) {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.rightfixed > li:nth-of-type(3) {
+  display: none;
+}
+
+.rightfixed > li .iconfont {
+  line-height: 40px;
+  font-size: 30px;
+  color: #FFF;
+}
+
+.rightfixed {
+  position: fixed;
+  top: 200px;
+  right: 0;
+  z-index: 2;
+  width: 40px;
+  height: 122px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rightfixed > li {
+  background-color: #ccc;
+  text-align: center;
+  position: flex;
+  width: 100%;
+  height: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.rightfixed > li:nth-of-type(2) {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.rightfixed > li:nth-of-type(3) {
+  display: none;
+}
+
+.rightfixed > li .iconfont {
+  line-height: 40px;
+  font-size: 30px;
+  color: #FFF;
 }
