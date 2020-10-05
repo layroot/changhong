@@ -1,19 +1,22 @@
 // import $ from './lib/jquery.js'
-define(['jquery'], function() {
+define(['jquery', 'jlazyload', 'cookie'], function() {
     return {
         init: function() {
             // 渲染
+
+            // $('.bot').style.display = 'block'
             $.ajax({
                 type: "post",
                 url: "http://127.0.0.1/changhong/php/goods.php",
                 dataType: "json",
                 success: function(response) {
+
                     let html = ``
                     response.forEach(function(elm, i) {
                         if (i < 8) {
                             html += ` <div class="contitem">
-                        <a href="127.0.0.1/changhong/src/detail.html?${elm.id}">
-                            <img src="${elm.url}" alt="">
+                        <a href="./detail.html?sid=${elm.sid}">
+                            <img class="lazy" data-original="${elm.url}" alt="">
                             <div class="text">
                             <span class="title">${elm.title}</span>
                             <p class="detail">${elm.detail}</p>
@@ -25,6 +28,9 @@ define(['jquery'], function() {
                         }
                     });
                     $('.bottom').append(html)
+                    $(function() {
+                        $("img.lazy").lazyload({ effect: "fadeIn" });
+                    });
                 }
             });
             // 渲染
@@ -54,12 +60,13 @@ define(['jquery'], function() {
                 }
             });
             /////////////////// 导航下拉二级菜单/////////////////////
-            $('.bot').hide();
+            // $('.bot').hide();
             $.ajax({ //导航下拉二级菜单渲染
                 type: "get",
                 url: "http://127.0.0.1/changhong/php/goods.php",
                 dataType: "json",
                 success: function(response) {
+
                     let html = ` <p class="p1">热门推荐</p>`
                     response.forEach(function(elm, i) {
                         if (i < 4) {
@@ -74,10 +81,11 @@ define(['jquery'], function() {
                     })
 
                     $('.botbox>ul').html(html)
-                    console.log(html)
+                        // console.log(html)
                 }
             });
             $('.menu>ul').on('mouseover', function() {
+                console.log(1)
                 $('.bot').stop(true).animate({ // 移动到导航，下拉动画
                     height: '280px',
                     display: 'block'
@@ -179,10 +187,10 @@ define(['jquery'], function() {
                     let top = $(window).scrollTop()
                     top > hometop ? $lffixed.show() : $lffixed.hide()
                     top > hometop ? $rtfixedli.show() : $rtfixedli.hide()
-                    console.log(top)
+                        // console.log(top)
                     $lou.each(function(i, elm) {
                         let lctop = $(elm).offset().top - $(elm).height() / 4
-                        console.log(lctop)
+                            // console.log(lctop)
                         if (top > lctop) {
                             $louti.eq(i).addClass('fixedactive').siblings().removeClass('fixedactive')
                         }
@@ -193,7 +201,7 @@ define(['jquery'], function() {
             $louti.on('click', function() {
                     $(this).addClass('fixedactive').siblings().removeClass('fixedactive')
                     let top = $lou.eq($(this).index()).offset().top
-                    console.log(top)
+                        // console.log(top)
                     $('html,body').stop(true).animate({
                         scrollTop: top
                     }, 1000)

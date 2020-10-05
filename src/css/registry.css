@@ -169,14 +169,15 @@ body {
   z-index: 1;
   width: 100%;
   height: 0px;
-  background-color: #fff;
   overflow: hidden;
 }
 
 .bot .botbox {
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   width: 1226px;
   height: 280px;
   background-color: #fff;

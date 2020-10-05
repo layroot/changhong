@@ -2,36 +2,230 @@
     @include auto;
     @include wh(1226px, 700px);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    background: #f9f9f9;
     .pic {
+        .show {
+            display: block;
+        }
+        // display: flex;
+        // flex-direction: column;
         @include wh(500px, 700px);
-        background-color: chartreuse;
-        .picfangda {
-            @include wh(100%, 500px);
-            background-color: yellow;
+        .small {
+            position: relative;
+            border: 1px solid #999;
+            @include wh(500px, 500px);
+            background-color: #fff;
+            img {
+                @include wh(500px, 500px)
+            }
+            .movebox {
+                position: absolute;
+                @include wh(200px, 200px);
+                background-color: yellow;
+                opacity: 0.5;
+                display: none;
+            }
+        }
+        .big {
+            position: relative;
+            overflow: hidden;
+            float: left;
+            border: 1px solid #999;
+            display: none;
+            background: #fff;
+            @include wh(500px, 500px);
+            left: 510px;
+            top: -502px;
+            position: relative;
+            img {
+                position: absolute;
+                @include wh(1000px, 1000px);
+                position: absolute;
+            }
         }
         .piclistbox {
+            position: absolute;
+            // top: -482px;
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
             width: 500px;
-            height: 150px;
-            background-color: rgb(6, 190, 129);
+            height: 102px;
+            margin-top: 30px;
             .piclist {
                 position: relative;
                 width: 460px;
                 height: 100%;
+                overflow: hidden;
+                ul {
+                    position: relative;
+                    width: 9999px;
+                    li {
+                        overflow: hidden;
+                        float: left;
+                        margin-right: 12px;
+                        width: 100px;
+                        height: 100px;
+                        border: 1px solid #999;
+                    }
+                }
             }
             .left,
             .right {
+                cursor: pointer;
+                text-align: center;
+                font-size: 30px;
                 width: 20px;
-                background-color: cornflowerblue;
+                line-height: 100px;
                 height: 100%;
             }
         }
     }
-    .price {
-        @include wh(700px, 700px);
-        background-color: aquamarine;
+    .detailbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        @include wh(650px, 700px);
+        .title {
+            height: 80px;
+            line-height: 100px;
+            font-size: 16px;
+        }
+        .detail {
+            width: 100%;
+            height: 40px;
+            font-size: 12px;
+            color: #999;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .pricebox {
+            font-size: 23px;
+            font-weight: bolder;
+            line-height: 60px;
+            width: 100%;
+            height: 110px;
+            color: #f12020;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .cent {
+            border-bottom: 1px solid #e1e1e1;
+            padding-top: 20px;
+            font-size: 14px;
+            height: 140px;
+            p {
+                height: 50px;
+            }
+            .dizhi {
+                height: 50px;
+            }
+            .city {
+                margin-left: 20px;
+                padding: 8px;
+                border: 1px solid #e1e1e1;
+            }
+            padding-bottom: 20px;
+        }
+        .bottom {
+            .di {
+                float: left;
+                // width: 180px;
+                // height: 30px;
+            }
+            span {
+                line-height: 40px;
+                float: left;
+            }
+            height: 170px;
+            width: 100%;
+            padding-top: 20px;
+            .edit {
+                float: left;
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                box-sizing: border-box;
+                height: 40px;
+                width: 156px;
+                border: 1px solid #b3b3b3;
+                a {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 35px;
+                    height: 40px;
+                    line-height: 37px;
+                }
+                >.reduce {
+                    font-size: 20px;
+                    font-weight: bolder;
+                    float: left;
+                    border-right: 1px solid #b3b3b3;
+                }
+                >.add {
+                    font-size: 20px;
+                    font-weight: bolder;
+                    float: right;
+                }
+                >input {
+                    outline: none;
+                    border: none;
+                    float: left;
+                    border-right: 1px solid #b3b3b3;
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 80px;
+                    height: 37px;
+                    text-align: center;
+                    >.text {
+                        line-height: 30px;
+                        width: 100%;
+                        display: inline-block;
+                        height: 100%;
+                        color: #976d30;
+                    }
+                }
+            }
+            .but {
+                display: flex;
+                justify-content: start;
+                margin-top: 30px;
+                float: left;
+                align-items: center;
+                width: 100%;
+                height: 80px;
+                >p {
+                    margin-left: 20px;
+                    .ma {
+                        margin-top: 12px;
+                        margin-right: 5px;
+                        float: left;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    span {
+                        font-size: 14px;
+                        color: #999;
+                    }
+                }
+                .buy,
+                .cart {
+                    outline: none;
+                    width: 180px;
+                    height: 40px;
+                    border: none;
+                }
+                .buy {
+                    background: #f12020;
+                    border: 1px solid #f12020;
+                    color: #fff;
+                }
+                .cart {
+                    margin-left: 13px;
+                    background: #fff;
+                    border: 1px solid #999;
+                    color: #666;
+                }
+            }
+        }
     }
 }

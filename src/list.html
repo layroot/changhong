@@ -7,7 +7,8 @@
     <title>长虹</title>
     <link rel="stylesheet" href="./css/list.css">
     <link rel="stylesheet" href="../font/download (5)/font_2100635_p30kkqsdnhj/iconfont.css">
-    <script src="./script/lib/require.js" defer async='true' data-main="./script/main.js" data-sc="list_module" id="current"></script>
+    <script src="./script/require.js" defer async='true' data-main="./script/main.js" data-sc="list_module" id="current"></script>
+    <link rel="stylesheet" href="./css/pagination.css">
 </head>
 
 <body>
@@ -80,9 +81,10 @@
     <div class="main">
         <div class="listtop">
             <ul>
-                <li>销量</li>
-                <li>价格</li>
-                <li>评价</li>
+                <li class="defbt">默认</li>
+                <li class="salebt">销量</li>
+                <li class="pricebt">价格</li>
+
                 <li>新品</li>
                 <li>促销</li>
             </ul>
@@ -106,7 +108,7 @@
     </div>
 
     <!-- ////////////////////分页/////////////////////// -->
-    <div class="lilist">
+    <!-- <div class="lilist">
         <div class="left">
             <span>首页</span>
             <span style="font-size: 20px;font-weight: bolder;"><</span>
@@ -122,7 +124,15 @@
             <span style="font-size: 20px;font-weight: bolder;">></span>
             <span>末页</span>
         </div>
+    </div> -->
+
+    <div class="pagelist">
+        <div class="m-style page">
+        </div>
     </div>
+
+
+
     <!-- //////////////底部//////////////////// -->
     <div class="footer ">
         <div class="foottop ">
