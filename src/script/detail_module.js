@@ -228,7 +228,7 @@ define(['jquery', 'cookie'], function() {
             }
             /////add///////
             $('.cart').on('click', function() {
-                addshop(sid, $('.shopnum').val(attr))
+                addshop(sid, $('.shopnum').val())
             })
 
 
