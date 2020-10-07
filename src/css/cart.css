@@ -308,6 +308,47 @@ body {
   background-color: #d13a3a !important;
 }
 
+.cheackred {
+  background: url(../img/yp-icons.7c45b9c9.png) 0 -418px !important;
+}
+
+.allc {
+  background: url(../img/yp-icons.7c45b9c9.png) 0 -418px !important;
+}
+
+.all {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-left: 7px;
+  margin-right: 20px;
+  vertical-align: middle;
+  margin-top: -5px;
+  background: url(../img/yp-icons.7c45b9c9.png) 0 -395px;
+}
+
+.cheack {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-left: 7px;
+  margin-right: 20px;
+  vertical-align: middle;
+  margin-top: -5px;
+  background: url(../img/yp-icons.7c45b9c9.png) 0 -395px;
+}
+
+.cheack2 {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-left: 7px;
+  margin-right: 20px;
+  vertical-align: middle;
+  margin-top: -5px;
+  background: url(../img/yp-icons.7c45b9c9.png) 0 -395px;
+}
+
 .cart-box {
   border-top: 1px solid #e7e7e7;
   width: 100%;
@@ -412,7 +453,7 @@ body {
   vertical-align: top;
   width: 17px;
   height: 17px;
-  background: url(../images/yp-icons.7c45b9c9.png) 0 -250px;
+  background: url(../img/yp-icons.7c45b9c9.png) 0 -250px;
 }
 
 .cart-box .shangpin .shangjia > .rt > .text {
@@ -596,7 +637,7 @@ body {
 .cart-foot > .lf {
   float: left;
   font-size: 18px;
-  color: #976d30;
+  color: #e7d6bb;
 }
 
 .cart-foot > .lf .all {
@@ -604,7 +645,7 @@ body {
 }
 
 .cart-foot > .lf .arealy-select {
-  margin-left: 20px;
+  text-align: center;
 }
 
 .cart-foot > .rt {

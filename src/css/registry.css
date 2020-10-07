@@ -313,6 +313,10 @@ body {
   margin: 0 auto;
 }
 
+.menu2 {
+  font-size: 30px;
+}
+
 .p1 {
   width: 500px;
   display: -webkit-box;
@@ -396,9 +400,15 @@ body {
   margin-left: 10px;
 }
 
-.p3 #btn {
-  background-color: #e42121;
-  outline: none;
+#btn {
+  background-color: gray;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  line-height: 40px;
+  color: #ffffff;
   width: 320px;
   height: 44px;
 }

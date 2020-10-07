@@ -26,7 +26,8 @@ define(['jquery', 'cookie'], function() {
                                 //console.log(sp)
                             html += `<div class="cart-item">
                             <div class="select">
-                                <input type="checkbox" class="ck">
+                            
+                              <span class="cheack"></span>
                             </div>
                             <div class="images">
                                 <img src="${elm.url}" alt=""><span></span>
@@ -54,29 +55,94 @@ define(['jquery', 'cookie'], function() {
                         })
                         $('.shangpin').html(html)
 
-                        //全选
-                        let $all = $('.all')
 
-                        $all.click(function() {
-                            $('.shangpin').find('.ck').prop('checked', $(this).prop('checked'));
-                        });
-                        $('.shangpin').on('click', '.ck', function() {
-                                if ($('input:checked').not('.all').length == $('.shangpin').find('.ck').length) {
-                                    $all.prop('checked', true)
-                                } else {
-                                    $all.prop('checked', false)
-                                }
-                            })
-                            //添加功能
+                        ////////////////////////添加功能
                         $('.shangpin').on('click', '.add', function() {
-
                             let num = parseInt($(this).prev().val())
                             let price = parseInt($(this).parents('.cart-item').find('.price').children().text().slice(1))
-
                             $(this).prev()[0].value = num + 1
-                            $(this).parents('.cart-item').find('.subtotal').children().html('￥' + (num + 1) * price + '00')
+                            $(this).parents('.cart-item').find('.subtotal').children().html('￥' + (num + 1) * price + '.00')
+                            allitem()
+                            sum()
+                            jiesuan()
+                            qx()
+                            already()
                         })
 
+                        /////////////////全选
+                        $('.all').on('click', function(ev) {
+                            console.log(1)
+                            let qx = $(ev.target).attr('class').slice(5)
+                            if (qx) {
+                                $(ev.target).removeClass('allc');
+                                $('.cheack').removeClass('cheackred')
+                            } else {
+                                $(ev.target).addClass('allc');
+                                $('.cheack').addClass('cheackred')
+                            }
+                            allitem()
+                            sum()
+                            jiesuan()
+
+                            already()
+                        })
+
+                        $('.shangpin').on('click', '.cheack', function(ev) {
+                            allitem()
+                            $(ev.target).toggleClass('cheackred')
+                            sum()
+                            jiesuan()
+                            qx()
+                            already()
+                        })
+
+                        //////////////////////////全部商品数量
+                        function allitem() {
+                            let all = 0
+                            $('.cart-item').each(function(i, elm) {
+                                all += parseInt($(elm).find('.edit').find('input').val())
+                            })
+                            $('.jishu').html(all)
+                        }
+                        allitem()
+                            ////////////////////总价函数////////////////////
+                        function sum() {
+                            let zj = 0
+                            $('.cheackred').each(function(i, elm) {
+                                zj += parseInt($(elm).parents('.cart-item').children('.subtotal').children().text().slice(1))
+                            })
+                            $('.cart-foot').children('.rt').children('.total').text('￥' + zj + '')
+
+                        }
+                        //////////////按钮红色函数/////////////////////////
+                        function jiesuan() {
+                            if ($('.cheackred').length > 0) {
+                                $('.btn').addClass('red')
+                            } else {
+                                $('.btn').removeClass('red')
+                            }
+                        }
+                        //////////////////全选函数////////////////
+                        function qx() {
+                            let quan = $('.cheackred').length
+                            let cooklength = JSON.parse(cookie.get('shop')).length
+                            console.log(quan, cooklength)
+                            if (quan == cooklength) {
+                                $('.all').addClass('allc');
+
+                            } else {
+                                $('.all').removeClass('allc');
+                            }
+                        }
+
+                        /////////////////已选数量//////////////////////
+                        function already() {
+                            let shu = 0
+                            $('.cheackred').each(function(i, elm) {
+                                shu += parseInt($(elm).parents('.cart-item').children('.num').children('.edit').children('input').val())
+                            })
+                            $('.cart-foot').children('.lf').children('.arealy-select').html(shu)
+                        }
                     }
                 });
             }

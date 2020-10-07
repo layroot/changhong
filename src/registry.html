@@ -7,6 +7,7 @@
     <title>注册</title>
     <link rel="stylesheet" href="./css/registry.css">
     <link rel="stylesheet" href="../font/download (5)/font_2100635_p30kkqsdnhj/iconfont.css">
+    <script src="./script/require.js" defer async='true' data-main="./script/main.js" data-sc="registry_module" id="current"></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
     <div class="header">
         <div class="header_contain">
             <div class="pic"><img src="./img/chtb.png" alt=""></div>
-            <div class="menu">
+            <div class="menu2">
                 注册
             </div>
         </div>
@@ -49,34 +50,35 @@
         <div class="regbox">
             <form action="">
                 <p class="p1">
-                    <label for="">手机号码</label><input type="text" name="" id="name" placeholder="请输入手机号">
+                    <label for="">用户名</label><input type="text" name="" id="username" placeholder="请输入用户名">
                 </p>
                 <p class="p2">
-                    <label for=""></label><span>X</span><span class="s1">请重新输入</span>
+                    <label for=""></label><span class="s1 usernames"></span>
                 </p>
                 <p class="p1">
-                    <label for="">输入密码</label><input type="text" name="" id="password" placeholder="请输入密码">
+
+                    <label for="">输入手机号码</label> <input type="text" placeholder="请输入手机号码" id="phone-num">
                 </p>
                 <p class="p2">
-                    <label for=""></label><span>X</span><span class="s1">请重新输入</span>
+                    <label for=""></label><span class="s1 phones"></span>
                 </p>
                 <p class="p1">
-                    <label for="">确认密码</label><input type="text" name="" id="checkpass" placeholder="请确认密码">
+                    <label for="">输入密码</label><input type="password" placeholder="请输入密码" id="password">
                 </p>
                 <p class="p2">
-                    <label for=""></label><span>X</span><span class="s1">请重新输入</span>
+                    <label for=""></label><span class="s1 passwords"></span>
                 </p>
                 <p class="p1">
-                    <label for="">输入邮箱</label><input type="text" name="" id="email" placeholder="请输入邮箱">
+                    <label for="">确认密码</label> <input type="password" placeholder="确认密码" id="repassword">
                 </p>
                 <p class="p2">
-                    <label for=""></label><span>X</span><span class="s1">请重新输入</span>
+                    <label for=""></label><span class="s1 repasswords"></span>
                 </p>
                 <p class="p3">
-                    <label for=""></label><input type="checkbox" checked>我已阅读并接受 <span class="s1">版权声明</span> </span>和<span class="s1">隐私保护</span> 条款
+                    <label for=""></label><input type="checkbox" class="ck">我已阅读并接受 <span class="s1">版权声明</span> </span>和<span class="s1">隐私保护</span> 条款
                 </p>
 
-                <buttn id="btn">登录</button>
+                <buttn id="btn">注册</button>
             </form>
         </div>
 

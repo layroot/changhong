@@ -8,6 +8,10 @@
     }
 }
 
+.menu2 {
+    font-size: 30px;
+}
+
 .p1 {
     width: 500px;
     display: flex;
@@ -65,9 +69,18 @@
     .s1 {
         margin-left: 10px;
     }
-    #btn {
-        background-color: #e42121;
-        outline: none;
-        @include wh(320px, 44px)
-    }
+}
+
+#btn {
+    background-color: gray;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    line-height: 40px;
+    color: #ffffff;
+    // @include wh(320px, 44px);
+    width: 320px;
+    height: 44px;
 }
