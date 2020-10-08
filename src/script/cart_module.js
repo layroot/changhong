@@ -49,7 +49,7 @@ define(['jquery', 'cookie'], function() {
                                 <span>￥${(elm.price*sp[0].num).toFixed(2)}</span>
                             </div>
                             <div class="del">
-                                <a href="">X</a>
+                            <a href="javascript:;"class="T${elm.id}">X</a>
                             </div>
                         </div>`
                         })
@@ -143,6 +143,19 @@ define(['jquery', 'cookie'], function() {
                             })
                             $('.cart-foot').children('.lf').children('.arealy-select').html(shu)
                         }
+                        //////////////删除功能///////////////
+                        $('.shangpin').on('click', '.del', function(ev) {
+                            console.log(1)
+                            this.parentNode.parentNode.removeChild(this.parentNode)
+                            shop = cookie.get("shop");
+                            shop = JSON.parse(shop);
+                            let did = $(ev.target).attr('class').slice(1)
+                            if (shop.some(elm => elm.id == did)) {
+                                shop = shop.filter(elm => elm.id != did);
+                                cookie.set('shop', JSON.stringify(shop), 1)
+                            }
+                            already()
+                        })
                     }
                 });
             }

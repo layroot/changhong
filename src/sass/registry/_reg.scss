@@ -2,6 +2,7 @@
     width: 100%;
     background-color: #ffffff;
     @include shadow;
+    padding-bottom: 20px;
     .regbox {
         width: 500px;
         @include auto;

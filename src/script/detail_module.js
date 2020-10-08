@@ -229,6 +229,7 @@ define(['jquery', 'cookie'], function() {
             /////add///////
             $('.cart').on('click', function() {
                 addshop(sid, $('.shopnum').val())
+                alert('加入成功')
             })
 
 

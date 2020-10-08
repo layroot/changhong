@@ -59,8 +59,18 @@ define(['jquery', 'jlazyload', 'cookie'], function() {
 
                 }
             });
-            /////////////////// 导航下拉二级菜单/////////////////////
-            // $('.bot').hide();
+            ///////////////////////////
+            function user() {
+                let user = cookie.get('user');
+                user = JSON.parse(user)
+                if (user) {
+                    $('.login').html('用户' + user)
+
+                }
+            }
+            user()
+                /////////////////// 导航下拉二级菜单/////////////////////
+                // $('.bot').hide();
             $.ajax({ //导航下拉二级菜单渲染
                 type: "get",
                 url: "http://127.0.0.1/changhong/php/goods.php",
@@ -107,6 +117,7 @@ define(['jquery', 'jlazyload', 'cookie'], function() {
                 })
 
             })
+
             $('.bot').hover(function() { //移入二级时，二级出现
 
                     $('.bot').stop(true).animate({

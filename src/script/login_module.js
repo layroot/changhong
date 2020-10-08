@@ -1,4 +1,4 @@
-define(['jquery'], function(require, factory) {
+define(['jquery', 'cookie'], function(require, factory) {
     return {
         init: function() {
             $('#btn').on('click', function() {
@@ -13,7 +13,10 @@ define(['jquery'], function(require, factory) {
                     success: function(response) {
                         if (response.cg) {
                             alert("登录成功");
+                            let user = $('#username').val()
+                            cookie.set('user', JSON.stringify(user), 1)
                             location.href = "http://127.0.0.1/changhong/src/index.html"
+
                         } else {
                             alert("用户名或者密码错误");
                             $('#username').val("")
