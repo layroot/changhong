@@ -36,12 +36,12 @@ define(['jquery', 'cookie'], function() {
                                 <p>${elm.title}</p>
                             </div>
                             <div class="price">
-                                <span>￥${elm.price}</span>
+                                <span class="p${elm.sid}">￥${elm.price}</span>
                             </div>
                             <div class="num">
                                 <div class="edit">
                                     <a href="javascript:;" class="reduce">-</a>
-                                    <input type="text" value="${sp[0].num}" min="1"  readonly class="${elm.price}">
+                                    <input type="text" value="${sp[0].num}" min="1"  readonly id="${elm.sid}" class="${elm.price}">
                                     <a href="javascript:;" class="add">+</a>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ define(['jquery', 'cookie'], function() {
                                 <span>￥${(elm.price*sp[0].num).toFixed(2)}</span>
                             </div>
                             <div class="del">
-                            <a href="javascript:;"class="T${elm.id}">X</a>
+                            <a href="javascript:;"class="T${elm.sid}">X</a>
                             </div>
                         </div>`
                         })
@@ -57,19 +57,70 @@ define(['jquery', 'cookie'], function() {
 
 
                         ////////////////////////添加功能
-                        $('.shangpin').on('click', '.add', function() {
-                            let num = parseInt($(this).prev().val())
-                            let price = parseInt($(this).parents('.cart-item').find('.price').children().text().slice(1))
-                            $(this).prev()[0].value = num + 1
-                            $(this).parents('.cart-item').find('.subtotal').children().html('￥' + (num + 1) * price + '.00')
-                            allitem()
-                            sum()
-                            jiesuan()
-                            qx()
-                            already()
-                        })
+                        // $('.shangpin').on('click', '.add', function() {
+                        //     let num = parseInt($(this).prev().val())
+                        //     let price = parseInt($(this).parents('.cart-item').find('.price').children().text().slice(1))
+                        //     $(this).prev()[0].value = num + 1
+                        //     $(this).parents('.cart-item').find('.subtotal').children().html('￥' + (num + 1) * price + '.00')
+                        //     allitem()
+                        //     sum()
+                        //     jiesuan()
+                        //     qx()
+                        //     already()
+                        // })
 
-                        /////////////////全选
+
+                        //////////////增加数量////////////////
+                        $('.shangpin').on('click', '.add', function(ev) {
+                                let shop = cookie.get('shop');
+                                shop = JSON.parse(shop)
+                                let nid = $(ev.target).prev().attr('id');
+
+                                let num = parseInt($(ev.target).prev().val())
+
+                                let price = parseInt($(this).parents('.cart-item').find('.price').children().text().slice(1))
+                                if (num < 50) {
+                                    $(ev.target).prev()[0].value = parseInt(num) + 1
+                                    $(ev.target).parents('.num').next().children().text('￥' + (num + 1) * price + '.00')
+
+                                    shop.forEach(function(elm) {
+                                        elm.id == nid ? elm.num++ : null
+                                    })
+                                    cookie.set('shop', JSON.stringify(shop), 1)
+
+                                }
+                                sum()
+                                jiesuan()
+                                already()
+
+                            })
+                            //////////////减去数量////////////////////
+                        $('.shangpin').on('click', '.reduce', function(ev) {
+                                let shop = cookie.get('shop');
+                                shop = JSON.parse(shop)
+
+
+                                let nid = $(ev.target).next().attr('id');
+                                console.log(nid)
+                                let num = parseInt($(ev.target).next().val())
+
+                                let price = parseInt($(this).parents('.cart-item').find('.price').children().text().slice(1))
+                                if (num > 1) {
+
+                                    $(ev.target).next()[0].value = parseInt(num) - 1
+                                    $(ev.target).parents('.num').next().children().text('￥' + (num - 1) * price + '.00')
+
+                                    shop.forEach(function(elm) {
+                                        elm.id == nid ? elm.num-- : null
+                                    })
+                                    cookie.set('shop', JSON.stringify(shop), 1)
+
+                                }
+                                sum()
+                                jiesuan()
+                                already()
+                            })
+                            /////////////////全选
                         $('.all').on('click', function(ev) {
                             console.log(1)
                             let qx = $(ev.target).attr('class').slice(5)
